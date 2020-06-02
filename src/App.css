@@ -1,10 +1,11 @@
 .Wrapper {
 	display: flex;
-	justify-content: center;
-	flex-direction: row;
 }
 .App {
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .App-logo {

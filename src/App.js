@@ -7,20 +7,13 @@ import ButtonPad from './Components/ButtonPad';
 import PropTypes from 'prop-types';
 
 class App extends Component {
-	static defaultProps = {
-		count: 0
-	};
-
-	static propTypes = {
-		count: PropTypes.any
-	};
 	render() {
 		return (
 			<div className="App">
 				<header className="App-header">
 					<h2>Adam's Counter App</h2>
 				</header>
-				<div id="wrapper">
+				<div id="wrapper" style={{ marginLeft: '500px' }}>
 					<div id="main">
 						<Counter />
 						<div>

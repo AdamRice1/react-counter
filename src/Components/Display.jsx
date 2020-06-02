@@ -9,13 +9,6 @@ import PropTypes from 'prop-types';
 // }
 
 export class Display extends Component {
-	static defaultProps = {
-		count: 0
-	};
-
-	static propTypes = {
-		count: PropTypes.any
-	};
 	render() {
 		return (
 			<section className="display">
