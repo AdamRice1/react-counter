@@ -1,16 +1,28 @@
-import React, {useState} from 'react';
+import React, { useState, Component } from 'react';
+import '../App.css';
+import ButtonPad from './ButtonPad';
+import PropTypes from 'prop-types';
 
-function Display(props) {
-    // const [display,setDisplay] = useState(0);
+//import count from 'ButtonPad';
+// function Display(props) {
+//     // const [display,setDisplay] = useState(0);
+// }
 
-    return (
-        <section className="display">
-            This is the Display for the Counter.
-        </section>
-    )
+export class Display extends Component {
+	static defaultProps = {
+		count: 0
+	};
 
-
+	static propTypes = {
+		count: PropTypes.any
+	};
+	render() {
+		return (
+			<section className="display">
+				<h4>The Current Count is</h4> <br></br>
+			</section>
+		);
+	}
 }
 
 export default Display;
-
