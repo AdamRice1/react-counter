@@ -3,18 +3,22 @@ import button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import AnimatedNumber from 'react-animated-number';
+import PropTypes from 'prop-types';
 
 class ButtonPad extends Component {
-	state = {
-		count: 0,
-		values: [],
-		crazy: Math.floor(Math.random() * 500 + 1)
-	};
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			count: 0,
+			values: [],
+			crazy: Math.floor(Math.random() * 500 + 1)
+		};
+	}
 	Upper = () => {
 		this.setState({ count: this.state.count + 1 });
 		this.setState({ values: this.state.values.concat(this.state.count) });
-		//console.log(this.state.count);
-		console.log(this.state.values);
+		this.props.value = this.state.count;
 	};
 	Downer = () => {
 		this.setState({ count: this.state.count - 1 });
@@ -93,6 +97,39 @@ class ButtonPad extends Component {
 					<h3>Previous Values</h3>
 					<p>{this.state.values + ','}</p>
 				</div>
+				<h1>{this.props.value}</h1>
+				<button
+					style={{ margin: '5px' }}
+					type="button"
+					className="btn-primary btn"
+					onClick={this.props.increment}
+				>
+					Increment Button
+				</button>
+				<button
+					style={{ margin: '5px' }}
+					type="button"
+					className="btn-danger btn"
+					onClick={this.props.decrement}
+				>
+					Decrement Button
+				</button>
+				<button
+					style={{ margin: '5px' }}
+					type="button"
+					className="btn-secondary btn"
+					onClick={this.props.reset}
+				>
+					Reset Button
+				</button>
+				<button
+					style={{ margin: '5px' }}
+					type="button"
+					className="btn-success btn"
+					onClick={this.props.switch}
+				>
+					Switch It Up Button
+				</button>
 			</div>
 		);
 	}
